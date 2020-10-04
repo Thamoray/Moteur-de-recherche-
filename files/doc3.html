@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-language" content="fr-fr"/>
+    <link rel="alternate" href="http://ippon.fr" hreflang="fr-fr">
+    <meta name="robots" content="all"/>
+    <meta name="description" content="tutoriel sur MongoDB" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="google-site-verification" content="xxAM9KFtl-iwq4-qUn0veqtnijeeF-5hngtO1erhI4w" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Trois ans en compagnie de MongoDB (Part 1 - Souffrance)</title>
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!-- fav icons -->
+    <link rel="shortcut icon" href="/favicon.png">
+    <!-- stylesheets -->
+    <link href='/assets/css/font.css?family=Open+Sans:400,700?v=1f5f6b46c3' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=1f5f6b46c3">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css?v=1f5f6b46c3">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css?v=1f5f6b46c3">
+    <link rel="stylesheet" href="/assets/css/owl.transitions.css?v=1f5f6b46c3">
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=1f5f6b46c3">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1f5f6b46c3">
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css?v=1f5f6b46c3">
+    <!--  <link rel="stylesheet" type="text/css" href="/assets/css/card.css?v=1f5f6b46c3">  -->
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/prism_Okaidia.css?v=1f5f6b46c3">
+
+
+
+    <script>
+/*====================================================
+  THEME SETTINGS & GLOBAL VARIABLES
+====================================================*/
+//  1. Disqus comment settings
+var disqus_shortname = 'example'; // required: replace example with your forum shortname
+
+//  2. Fixed navbar
+var fixed_navbar = false;
+
+//  3. Latest slider Post count
+var Latest_slider_post_count = 7;
+
+//  4. Recent Post count
+var recent_post_count = 3;
+
+//	5. Facebook Page Setting
+var facebook_page_url = '';
+
+//	6. Mailchimp signup form Setting
+var mailchimp_form_url = 'http://gbjsolution.us4.list-manage.com/subscribe?u=a63b2fed3ed61b70bf56d1aed&id=1e3806b1d4';
+var success_message = "Vérifiez votre boîte de réception et confirmez votre adresse e-mail. Merci!";
+
+//  7. Special tag one
+var special_tag_one = 'LIFESTYLE';
+var tag_one_post_count = 4;
+
+//  8. Special tag one
+var special_tag_two = 'TECHNOLOGY';
+var tag_two_post_count = 5;
+</script>    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/amp/" />
+    
+    <meta property="og:site_name" content="Ippon | Cabinet de conseil et expertise en technologies | Discovery to Delivery" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trois ans en compagnie de MongoDB (Part 1 - Souffrance)" />
+    <meta property="og:description" content="MongoDB et moi, nous avons fait un bon bout de chemin ensemble. Le projet sur
+lequel j&#x27;ai travaillé les 3 dernières années était construit autour de MongoDB.
+Durant ces 3 années, j&#x27;ai vu MongoDB évoluer de la version 2.6 à 3.6. Le projet
+n&#x27;avait pas encore migré vers la version 4.0 au moment de mon départ.
+
+Globalement j&#x27;étais heureux avec MongoDB, mais comme dans toutes les relations
+il y avait des hauts et des bas. Dans cet article je me confesse sur les
+problèmes de notre vie commune. Certain" />
+    <meta property="og:url" content="http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" />
+    <meta property="og:image" content="http://blog.ippon.fr/content/images/2018/12/mongodb-logo-rgb.jpg" />
+    <meta property="article:published_time" content="2018-12-17T10:41:00.000Z" />
+    <meta property="article:modified_time" content="2019-01-10T10:59:01.000Z" />
+    <meta property="article:tag" content="Data" />
+    <meta property="article:tag" content="MongoDB" />
+    <meta property="article:tag" content="NoSQL" />
+    <meta property="article:tag" content="REX" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Trois ans en compagnie de MongoDB (Part 1 - Souffrance)" />
+    <meta name="twitter:description" content="MongoDB et moi, nous avons fait un bon bout de chemin ensemble. Le projet sur
+lequel j&#x27;ai travaillé les 3 dernières années était construit autour de MongoDB.
+Durant ces 3 années, j&#x27;ai vu MongoDB évoluer de la version 2.6 à 3.6. Le projet
+n&#x27;avait pas encore migré vers la version 4.0 au moment de mon départ.
+
+Globalement j&#x27;étais heureux avec MongoDB, mais comme dans toutes les relations
+il y avait des hauts et des bas. Dans cet article je me confesse sur les
+problèmes de notre vie commune. Certain" />
+    <meta name="twitter:url" content="http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" />
+    <meta name="twitter:image" content="http://blog.ippon.fr/content/images/2018/12/mongodb-logo-rgb.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Boris Perevalov" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Data, MongoDB, NoSQL, REX" />
+    <meta name="twitter:site" content="@ippontech" />
+    <meta property="og:image:width" content="4045" />
+    <meta property="og:image:height" content="1154" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Ippon | Cabinet de conseil et expertise en technologies | Discovery to Delivery",
+        "logo": "http://blog.ippon.fr/content/images/2018/11/LogoIPPON-Rouge-2.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Boris Perevalov",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://blog.ippon.fr/content/images/2018/12/PEREVALOV-Boris-N-B-1.jpeg",
+            "width": 3989,
+            "height": 4335
+        },
+        "url": "http://blog.ippon.fr/author/boris/",
+        "sameAs": []
+    },
+    "headline": "Trois ans en compagnie de MongoDB (Part 1 - Souffrance)",
+    "url": "http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/",
+    "datePublished": "2018-12-17T10:41:00.000Z",
+    "dateModified": "2019-01-10T10:59:01.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://blog.ippon.fr/content/images/2018/12/mongodb-logo-rgb.jpg",
+        "width": 4045,
+        "height": 1154
+    },
+    "keywords": "Data, MongoDB, NoSQL, REX",
+    "description": "MongoDB et moi, nous avons fait un bon bout de chemin ensemble. Le projet sur\nlequel j&#x27;ai travaillé les 3 dernières années était construit autour de MongoDB.\nDurant ces 3 années, j&#x27;ai vu MongoDB évoluer de la version 2.6 à 3.6. Le projet\nn&#x27;avait pas encore migré vers la version 4.0 au moment de mon départ.\n\nGlobalement j&#x27;étais heureux avec MongoDB, mais comme dans toutes les relations\nil y avait des hauts et des bas. Dans cet article je me confesse sur les\nproblèmes de notre vie commune. Certain",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://blog.ippon.fr/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 2.19" />
+    <link rel="alternate" type="application/rss+xml" title="Ippon | Cabinet de conseil et expertise en technologies | Discovery to Delivery" href="http://blog.ippon.fr/rss/" />
+    
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+<style type="text/css">
+table {
+  padding: 0;
+  width: 100%;
+    }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      text-align: left;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+</style>
+    <meta name="google-site-verification" content="646RWjpwFd-XRKF9dugekSAFmuGk8MvIK8oSmFlA23s" />
+</head>
+<body class="post-template tag-data tag-mongodb tag-nosql tag-rex" >
+<div class="header-container">
+    <div class="header-container-child">
+        <div class="primary_bar">
+            <a href="http://blog.ippon.fr" class="logo_ippon"> <img class="wow fadeInDown" data-wow-duration="1s"
+                                                                   src="/content/images/2018/11/LogoIPPON-Rouge-2.png"> </a>
+            <ul class="right-buttons">
+                <li>
+                    <a href="/contact" id="contact_tel"><!-- <i class="icon-telephone2"></i> --><img id="img_search_loop"
+                            src="/assets/images/mail.svg?v=1f5f6b46c3"></a>
+                </li>
+                <li>
+                    <div class="wrap-search">
+                        <a id="link_m_search" href="/m-search"><img src="/assets/images/search2.svg?v=1f5f6b46c3"></a>
+                        <form action="" autocomplete="off">
+                            <input type="text" name="search" placeholder="Rechercher..." id="search-input">
+                        </form>
+                        <div class="popover__wrapper">
+                            <div id="popover-content">
+                                <div class="post_zone">
+                                    <div class="col-xs-12 searchfor">
+                                        <a href="">Rechercher <span></span></a>
+                                    </div>
+                                    <div class="info_search"></div>
+                                    <span>
+								 	POSTS
+								 </span>
+                                    <hr/>
+                                    <ul class="search_post">
+
+                                    </ul>
+                                </div>
+                                <div class="search_tag">
+                                    <span> TAGS</span><!-- <span class="more"><a href="">MORE</a></span> -->
+                                    <hr/>
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <!-- start header -->
+        <header class="main-header">
+            <nav class="navbar navbar-default" id="main-navbar">
+
+                <div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+
+        <li class="home"><a href="http://blog.ippon.fr"><i class="icon-home2" aria-hidden="true"></i></a></li>
+            <li class="digital "><a href="http://blog.ippon.fr/tag/digital/">DIGITAL</a>
+            </li>
+            <li class="data "><a href="http://blog.ippon.fr/tag/bigdata/">DATA</a>
+            </li>
+            <li class="cloud "><a href="http://blog.ippon.fr/tag/cloud/">CLOUD</a>
+            </li>
+            <li class="agilite "><a href="http://blog.ippon.fr/tag/agilite/">AGILITE</a>
+            </li>
+            <li class="front-end "><a href="http://blog.ippon.fr/tag/front-end/">FRONT-END</a>
+            </li>
+            <li class="back-end "><a href="http://blog.ippon.fr/tag/back-end/">BACK-END</a>
+            </li>
+            <li class="devops "><a href="http://blog.ippon.fr/tag/devops/">DEVOPS</a>
+            </li>
+            <li class="mobile "><a href="http://blog.ippon.fr/tag/mobile/">MOBILE</a>
+            </li>
+        <li class="we_are_ippon"><a href="https://www.ippon.fr/we-are-ippon/" target="_blank">#WeAreIppon</a>
+            </li>
+    </ul>
+</div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+</div>
+<div class="page-wrap page-wrap-position">
+
+    <!-- end header -->
+
+
+<div class="container container-author">
+    <div class="row">
+    <div class="col-md-8 wow fadeInLeft" data-wow-duration="1s">
+    <div class="row default-layout">
+            <!-- start post -->
+            <article class="col-sm-12 post-wrap full-post">
+                <div class="featured-media">
+                    <div class="image-container">
+                            <img src="/content/images/2018/12/mongodb-logo-rgb.jpg" alt="Trois ans en compagnie de MongoDB (Part 1 - Souffrance)">
+                    </div>
+
+                        <div class="tag-list"><a href="/tag/data/">Data</a><a href="/tag/mongodb/">MongoDB</a><a href="/tag/nosql/">NoSQL</a><a href="/tag/rex/">REX</a></div>
+                </div>
+
+                <h1 class="title">Trois ans en compagnie de MongoDB (Part 1 - Souffrance)</h1>
+                <div class="post-meta">
+                        <span class="author">
+	                    <i class="fa fa-user"></i>
+	                    <a href="/author/boris/">Boris Perevalov</a>
+	                </span>
+                    <span class="date">
+	                    <i class="fa fa-calendar-o"></i>
+                        17 Dec 2018
+	                </span>
+                    <span class="comment">
+	                    <i class="fa fa-comment-o"></i>
+	                    <a href="/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/#disqus_thread">0 Commentaires</a>
+	                </span>
+                </div>
+                <section class="post-entry">
+
+                    <!--kg-card-begin: markdown--><!--kg-card-begin: markdown--><p>MongoDB et moi, nous avons fait un bon bout de chemin ensemble. Le projet sur lequel j'ai travaillé les 3 dernières années était construit autour de MongoDB. Durant ces 3 années, j'ai vu MongoDB évoluer de la version 2.6 à 3.6. Le projet n'avait pas encore migré vers la version 4.0 au moment de mon départ.</p>
+<p>Globalement j'étais heureux avec MongoDB, mais comme dans toutes les relations il y avait des hauts et des bas. Dans cet article je me confesse sur les problèmes de notre vie commune. Certains de ses comportements m'agaçaient au quotidien et d'autres avaient provoqué de graves crises dans nos relations.</p>
+<p>Comme c'est toujours le cas, MongoDB n'était pas la seule responsable de ces troubles. Ses comportements qui m'ont fait pleurer amuseront peut-être les autres, c'est subjectif. Les crises les plus graves étaient plus souvent provoquées par ma mauvaise compréhension de son fonctionnement, je n'avais pas bien lu la documentation.</p>
+<p>Si cet article vous paraît assez négatif, ce n'est pas parce que je n'aime pas du tout MongoDB. MongoDB a des qualités pour lesquelles elle mérite d'être appréciée. Mon objectif est de vous prévenir de ses particularités, afin que vous soyez heureux ensemble si un jour vous croisez son chemin.</p>
+<p>Le projet avait intégré MongoDB avant mon arrivée dans l'équipe. Je ne me prononce pas sur la pertinence de ce choix. Je n'ai pas fait d'étude comparative des solutions disponibles en 2014. Je peux juste dire que MongoDB répondait plutôt bien aux besoins du projet.</p>
+<h1 id="mongoshellquisurprend">Mongo shell qui surprend</h1>
+<p>La syntaxe des requêtes mongo paraît un peu barbare au début quand on vient du monde SQL mais on s'y habitue vite, on y prend goût même. Il est tout à fait naturel d'interroger les données au format BSON (JSON binaire) par des requêtes composées d'objets JSON. L'outil <em>mongo shell</em> qui permet d'interroger la base en ligne de commande est très pratique au quotidien. Néanmoins, il a quelques comportements bizarres qui m'ont fait souffrir. Voici celui qui m'a le plus marqué.</p>
+<p>MongoDB supporte plusieurs types numériques : <em>Double</em>, <em>Integer</em>, <em>Long</em> et <em>Decimal128</em> (à partir de la version 3.4). Lorsqu'on fait une requête en <em>mongo</em> <em>shell</em>, tout nombre est interprété comme <em>Double</em> :</p>
+<pre><code class="language-javascript">&gt; db.users.insert({age: 18})
+</code></pre>
+<p>Pourquoi <em>Double</em> ? Ce nombre ressemble pourtant beaucoup plus à un entier. Afin de pouvoir stocker un <em>Integer</em> ou un <em>Long</em>, il faut utiliser la syntaxe suivante :</p>
+<pre><code class="language-javascript">&gt; db.users.insert({age: NumberInt(25)})
+&gt; db.users.insert({age: NumberLong(42)})
+</code></pre>
+<p>Et les surprises ne s'arrêtent pas là. Voici comment <em>mongo shell</em> affiche les 3 documents que l'on vient de créer :</p>
+<pre><code class="language-javascript">&gt; db.users.find({}, {_id: 0})
+
+{ &quot;age&quot; : 18 }
+{ &quot;age&quot; : 25 }
+{ &quot;age&quot; : NumberLong(42) }
+</code></pre>
+<p>Il est impossible de voir que 18 est un <em>Double</em> et que 25 est un <em>Integer</em> ! Ce n'est qu'à partir de la version 3.4 qu'il était devenu possible d'afficher les types des attributs, mais pour cela il faut faire une requête <em>aggregate</em> assez barbare, accrochez-vous :</p>
+<pre><code class="language-javascript">&gt; db.users.aggregate({
+    $project: {_id: 0, age: &quot;$age&quot;, age_type: {$type: &quot;$age&quot;}}
+})
+
+{ &quot;age&quot; : 18, &quot;age_type&quot; : &quot;double&quot; }
+{ &quot;age&quot; : 25, &quot;age_type&quot; : &quot;int&quot; }
+{ &quot;age&quot; : NumberLong(42), &quot;age_type&quot; : &quot;long&quot; }
+</code></pre>
+<p>Si on met à jour un attribut de type <em>Integer</em> en oubliant (croyez-moi, ça arrive) d'encapsuler la nouvelle valeur dans <em>NumberInt()</em></p>
+<pre><code class="language-javascript">&gt; db.users.update({age: 25}, {$set: {age: 26}})
+</code></pre>
+<p>l'attribut de type <em>Integer</em> devient <em>Double</em>. On se retrouve donc avec des données corrompues alors que la requête paraît correcte.</p>
+<h1 id="bonupdateetmauvaisupdate">Bon update et mauvais update</h1>
+<p>Lorsqu'on fait une requête <em>update</em></p>
+<pre><code class="language-javascript">&gt; db.users.update({age: {$gte: 18}}, {$set: {status: &quot;adult&quot;}})
+</code></pre>
+<p>seul le premier document trouvé est mis à jour. Pour mettre à jour tous les documents correspondants à la condition, il faut soit ajouter l'option <code>{multi: true}</code> dans la requête :</p>
+<pre><code class="language-javascript">&gt; db.users.update({age: {$gte: 18}}, {$set: {status: &quot;adult&quot;}}, {multi: true})
+</code></pre>
+<p>soit utiliser la méthode <em>updateMany</em> :</p>
+<pre><code class="language-javascript">&gt; db.users.updateMany({age: {$gte: 18}}, {$set: {status: &quot;adult&quot;}})
+</code></pre>
+<p>Ce comportement me perturbait au début mais je m'y suis habitué avec le temps. En revanche, il y a un piège dans lequel je tombais régulièrement. Si on ne met aucun opérateur dans l'objet modificateur de la méthode <em>updateMany</em> (par exemple, on oublie l'opérateur <em>$set</em>)</p>
+<pre><code class="language-javascript">&gt; db.users.updateMany({age: {$gte: 18}}, {status: &quot;adult&quot;})
+</code></pre>
+<p>la requête est rejetée comme non valide. En revanche, si on fait la même erreur dans la méthode <em>update</em></p>
+<pre><code class="language-javascript">&gt; db.users.update({age: {$gte: 18}}, {status: &quot;adult&quot;})
+</code></pre>
+<p>la requête s'exécute et remplace le premier document trouvé par l'objet modificateur, on perd donc tous les autres attributs.</p>
+<pre><code class="language-javascript">&gt; db.users.find({}, {_id: 0})
+
+{ &quot;status&quot; : &quot;adult&quot; }
+{ &quot;age&quot; : 25, &quot;status&quot; : &quot;adult&quot; }
+{ &quot;age&quot; : NumberLong(42), &quot;status&quot; : &quot;adult&quot; }
+</code></pre>
+<p>Voilà encore une astuce pour corrompre vos données.</p>
+<h1 id="pourquoifairesimple">Pourquoi faire simple ?</h1>
+<p>Voici une requête SQL très simple :</p>
+<pre><code class="language-sql">SELECT * FROM monthly_budget WHERE spent &gt; budget 
+</code></pre>
+<p>Même une personne qui ne connaît rien en informatique sera capable de comprendre ce qu'elle fait, tant la syntaxe est explicite. Comment exprimer la même requête pour MongoDB ? Le problème est que la condition compare deux champs de même document et MongoDB n'avait pas prévu ce cas d'usage &quot;tellement rare&quot;.</p>
+<p>Avant la version 3.6, le seul moyen faire cette requête de façon performante était de passer par <em>aggregate</em>, éloignez les plus sensibles de l'écran :</p>
+<pre><code class="language-javascript">&gt; db.monthly_budget.aggregate([{
+    $redact: {
+        $cond: [{ 
+            $gt: [&quot;$spent&quot;, &quot;$budget&quot;]}, 
+            &quot;$$KEEP&quot;,
+            &quot;$$PRUNE&quot;
+        ]
+    }
+}])
+</code></pre>
+<p>La version 3.6 a introduit l'opérateur <em>$expr</em> qui permet d'utiliser les opérateurs de <em>aggregate</em> dans la requête <em>find</em>. Notre requête devient donc un peu plus simple :</p>
+<pre><code class="language-javascript">&gt; db.monthly_budget.find({$expr: {$gt: [&quot;$spent&quot;, &quot;$budget&quot;]}})
+</code></pre>
+<p>Il existe une autre façon de procéder mais qu'il ne faut surtout pas utiliser à cause des performances désastreuses :</p>
+<pre><code class="language-javascript">&gt; db.mounthly_budget.find({
+    $where: function() {return this.spent &gt; this.budget}
+})
+</code></pre>
+<p>Malgré le fait que les trois requêtes ci-dessus procèdent par le COLLSCAN (aucune n'utilise les index), les deux premières sont <strong>de trois ordres de grandeur plus rapides</strong> que la requête avec <em>$where</em>. Le fait que le filtre de cette requête exécute la fonction JavaScript sur chaque document la rend extrêmement lente. Il y a une mise en garde à ce sujet dans la documentation MongoDB.</p>
+<h1 id="indexttlsur_idouimaisnon">Index TTL sur _id ? Oui, mais non</h1>
+<p>Nous n'avions pas défini la stratégie de nettoyage des données périmées au début de projet en la reportant à plus tard. Le problème c'est que ce &quot;plus tard&quot; est arrivé au bout de quelques mois de production et nous nous sommes retrouvés coincés.</p>
+<p>La collection grandissait, les requêtes ralentissaient, les index prenaient de plus en plus de place dans la mémoire RAM des machines. Nous ne pouvions pas juste supprimer les données périmées car la requête (ou les requêtes) de suppression aurait bloqué les écritures sur la collection en provoquant un <em>downtime</em> conséquent (jusqu'à plusieurs heures) de notre service synchrone. La meilleure solution (que nous avions au final réussi à mettre en place avec un workflow de migration complexe) était d'ajouter un index TTL et de le laisser gérer la suppression. Malheureusement, l'index TTL ne peut être ajouté que sur un champ de type <em>Date</em> et nos dates de création étaient stockées en timestamp <em>Long</em> (ne me demandez pas pourquoi). La mise à jour massive de la collection pour transformer le timestamp en <em>Date</em> n'était pas acceptable pour les mêmes raisons que la requête de suppression.</p>
+<p>Ce qui aurait pu nous aider, c'est que MongoDB permette d'ajouter l'index TTL sur _id dont la valeur encapsule le timestamp de création de document. Malheureusement, cette fonctionnalité proposée en 2012 (<a href="https://jira.mongodb.org/browse/SERVER-6701">SERVER-6701</a>, <a href="https://jira.mongodb.org/browse/SERVER-9305">SERVER-9305</a>) n'est toujours pas implémentée.</p>
+<h1 id="skipquinesautepas">Skip qui ne saute pas</h1>
+<p>Un jour nous devions mettre en place un traitement par batch sur une collection contenant plusieurs dizaines de millions de documents. Nous avions réalisé ce traitement à l'aide de requêtes paginées avec <em>skip</em> et <em>limit</em>. Cela fonctionnait parfaitement sur un petit jeu de données, mais lors des tests sur le volume de données cible, le traitement n'arrivait jamais au bout, il ralentissait et finissait par mettre à genoux la base systématiquement. Nous avons mis du temps avant de trouver cela dans la documentation de MongoDB :</p>
+<blockquote>
+<p><em>&quot;The cursor.skip() method requires the server to scan from the beginning of the input results set before beginning to return results. As the offset increases, cursor.skip() will become slower.&quot;</em></p>
+</blockquote>
+<p>Cela signifie que <em>skip(N)</em> ne saute pas les <em>N</em> premiers documents mais il les parcourt sur le disque, et c'est le cas même si la requête trie les documents avec un index.</p>
+<p>Pour contourner ce problème, dans notre cas, il a suffi de grouper les documents dans les batchs par des filtres sur un champ incrémental et indexé (cela peut être la date de création, par exemple) au lieu de les paginer par <em>skip</em> et <em>limit</em>.</p>
+<h1 id="indexquibloquetout">Index qui bloque tout</h1>
+<p>Voici encore un extrait de la documentation MongoDB que nous avions trouvé de façon empirique :</p>
+<blockquote>
+<p><em>&quot;Foreground index builds block all other operations on the database.&quot;</em></p>
+</blockquote>
+<p>Sachant que le mode <em>foreground</em> est celui par défaut et que la création d'un index sur une collection volumineuse peut prendre des heures, je vous laisse imaginer l'état de panique lors de la mise en production d'une version qui ajoute un nouvel index. Je n'ai trouvé aucune indication dans la documentation de MongoDB sur les avantages que présente le mode <em>foreground</em> et pourquoi il est celui par défaut. L'option <em>background</em> n'est donc pas une option, il est indispensable d'utiliser ce mode pour éviter le <em>downtime</em>.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Dans cet article j'ai omis volontairement tous les points forts de MongoDB que j'apprécie. Cela fera le sujet de mon deuxième article.</p>
+<p>Je vous ai raconté tout ce qui m'a le plus marqué. Il y avait d'autres problèmes dont je ne me rappelle plus. Je me souviens juste que la question &quot;Pourquoi ?&quot; revenait assez souvent dans nos relations.</p>
+<p>Ma recette pour être heureux avec MongoDB était de ne pas essayer de comprendre ses choix, mais juste d'apprendre à vivre avec et de l'apprécier pour ses qualités.</p>
+<!--kg-card-end: markdown--><!--kg-card-end: markdown-->
+                </section>
+                <br>
+                <span class="recommend_article"><form id="kindly_tap" data-statut="0">Vous avez trouvé cette publication utile? Cliquer sur <button
+                        style="background: transparent;border: none;outline: none;"><img id="heart_art"
+                                                                                         src="/assets/images/hearts.svg"></button></form></span>
+            </article>
+        </div>
+        </div>
+            <!-- end post -->
+            <aside class="col-md-4 slidebar_home wow fadeInRight" data-wow-duration="1s">
+	<div class="sidebar">
+					<!-- start tag cloud widget -->
+<div class="widget livre-blanc">
+    <h4 class="h5 title"><span>Livre</span> Blanc</h4>
+    <span class="subtitle-livre-blanc">Explore Big Data.</span>
+    <p>Ce livre blanc prend “un peu” de hauteur sur les technologies Big Data afin d’aider les décideurs à faire les bons choix techniques et à y voir plus clair sur les opportunités offertes par les différentes technologies.</p>
+    <div class="pagination-wrap col-xs-12 no-pd">
+    <div class="pagination clearfix " role="navigation">
+            <a class="older-posts btn" target="_blank" href="https://fr.ippon.tech/explore-big-data/">Je télécharge</a>
+    </div>
+</div>
+</div>
+<div class="widget">
+    <h4 class="h5 title"><span>Vidéo</span> Métier</h4>
+    <iframe class="youtube-iframe" src="https://www.youtube.com/embed/psstx2nTRVE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="widget">
+    <h4 class="h5 title"><span>REX</span> Clients</h4>
+    <iframe class="youtube-iframe" src="https://www.youtube.com/embed/HcKfzOwVfV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+		<div style="font-size:16px;">
+	</div>
+	<!-- start widget -->
+<div class="widget">
+	<h4 class="h5 title"><span>Post </span>Récents</h4>
+	<div class="content recent-post"></div>
+</div>
+<!-- end widget -->	<!-- start widget -->
+<div class="widget">
+	<h4 class="h5 title"><span>We are </span>IPPON</h4>
+	<div class="content ad">
+		<a href="http://www.ippon.fr/nous-rejoindre/" target="_blank"><img src="/assets/images/sponsor.jpg?v=1f5f6b46c3"></a>
+	</div>
+</div>
+<!-- end widget -->	</div>
+</aside>
+<style type="text/css">
+
+.go_newsLetter{
+	padding: 7px !important;
+}
+</style>            <div class="col-xs-12">
+                <div class="share-wrap col-sm-12">
+	<div class="share-wrap-inner clearfix">
+		<div class="share-text h4">Partagez cet article:</div>
+		
+		<ul>
+			<!-- facebook -->
+		<li>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook"><i class="fa fa-facebook"></i></a>
+		</li>
+		<!-- twitter -->
+		<li>
+			<a href="https://twitter.com/share?text=Trois%20ans%20en%20compagnie%20de%20MongoDB%20(Part%201%20-%20Souffrance)&amp;url=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter"><i class="fa fa-twitter"></i></a>
+		</li>
+		<!-- google plus -->
+		<li>
+			<a href="https://plus.google.com/share?url=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus" title="Google Plus"></i></a>
+		</li>
+		<!-- digg -->
+		<li>
+			<a href="http://www.digg.com/submit?url=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" onclick="window.open(this.href, 'digg-share', 'width=490,height=530');return false;" title="Digg"><i class="fa fa-digg"></i></a>
+		</li>
+		<!-- reddit -->
+		<li>
+			<a href="http://reddit.com/submit?url=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/&title=Trois ans en compagnie de MongoDB (Part 1 - Souffrance)" onclick="window.open(this.href, 'reddit-share', 'width=490,height=530');return false;" title="Reddit"><i class="fa fa-reddit"></i></a>
+		</li>
+		<!-- linkedin -->
+		<li>
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/" onclick="window.open(this.href, 'linkedin-share', 'width=490,height=530');return false;" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+		</li>
+		<!-- pinterest -->
+		<li>
+			<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+		</li>
+		<!-- StumbleUpon-->
+		<li>
+			<a href="http://www.stumbleupon.com/submit?url=http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/&title=Trois ans en compagnie de MongoDB (Part 1 - Souffrance)" onclick="window.open(this.href, 'stumbleupon-share', 'width=490,height=530');return false;" title="StumbleUpon"><i class="fa fa-stumbleupon"></i></a>
+		</li>
+		</ul>
+		
+	</div>
+</div>            </div>
+        <div class="col-md-8 col-xs-12">
+            <!-- start about the author -->
+<div class="about-author col-sm-12 clearfix">
+		<a href="/author/boris/" title="Boris Perevalov"><img src="/content/images/2018/12/PEREVALOV-Boris-N-B-1.jpeg" alt="Author image" class="avatar pull-left"></a>
+	<div class="details">
+		<div class="author">
+			<a href="/author/boris/" class="h5">Boris Perevalov</a>
+		</div>
+		<div class="meta-info">
+			<span class="loaction"><i class="fa fa-map-marker fa-fw"></i>Lyon</span>
+		</div>
+	</div>
+</div>
+<!-- end about the author -->            <div class="col-xs-12 ippon_container clearfix">
+                <!-- 	<img src="/content/images/2018/11/LogoIPPON-Rouge-2.png" alt="Ippon technology" class="img-rounded col-sm-3" /> -->
+                <span class="col-xs-12 comapny"> Ippon</span>
+                <div class="col-xs-12">
+                    Ippon est un cabinet de conseil en technologies, créé en 2002 par un sportif de Haut Niveau et un polytechnicien, avec pour ambition de devenir leader sur les solutions Digitales, Cloud et BigData.<br><br>
+
+                    Ippon accompagne les entreprises dans le développement et la transformation de leur système d’information avec des applications performantes et des solutions robustes.<br><br>
+
+                    Ippon propose une offre de services à 360° pour répondre à l’ensemble des besoins en innovation technologique : Conseil, Design, Développement, Hébergement et Formation.<br><br>
+
+                    Nous avons réalisé, en 2017, un chiffre d’affaires de 31 M€ en croissance organique de 30%. Nous sommes aujourd’hui un groupe international riche de plus de 320 consultants répartis en France, aux USA, en Australie et au Maroc.
+                    <div class="meta-info">
+                        <span class="loaction"><i class="fa fa-map-marker fa-fw"></i>FRANCE </span>
+                        <span class="website"><a href="http://www.ippon.fr" target="_BLANK"><i
+                                class="fa fa-link fa-fw"></i>Website</a></span>
+                        <span class="linkedin"><a href="https://www.linkedin.com/company/ippon-technologies"
+                                                  target="_BLANK"><i
+                                class="fa fa-link fa-linkedin"></i>LinkedIn</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+    <div class="prev-next-wrap clearfix">
+            <a rel="amphtml" class="previous-post pull-left prevBackground" href="/2018/12/19/scrube-un-atelier-agile-pour-fabriquer-des-cubes/">
+                <div class="prev-next-inner">
+                    <span class="link-text">Post précédent</span>
+                    <h3 class="title h4">Scrube : Un atelier agile pour fabriquer des cubes</h3>
+                </div>
+            </a>
+            <a rel="amphtml" class="next-post pull-right nextBackground" href="/2018/12/07/comment-jai-compris-que-je-faisais-du-software-crafting/">
+                <div class="prev-next-inner">
+                    <span class="link-text">Poste suivant</span>
+                    <h3 class="title h4">Comment j&#x27;ai compris que je faisais du &quot;Software Crafting&quot;</h3>
+                </div>
+            </a>
+    </div>
+</div>        <!-- start disqus comment -->
+<div class="col-sm-12">
+	<div class="comment-container">
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		
+		var disqus_config = function () {
+			this.page.url = "http://blog.ippon.fr/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/";
+			// this.page.identifier = "ghost-";
+			this.page.identifier = "ghost-5c13c195e461fe06cd5a0e10";
+		};
+		var disqus_shortname = "blogippontechnologies";
+		// var disqus_shortname = "blogipponfr";
+		//var disqus_url = "";
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://blogipponfr.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+</div>
+<!-- end disqus comment -->    </div>
+
+
+    </div>
+</div>
+
+
+
+<footer class="main-footer col-xs-12">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 col-xs-12 div_logo">
+                    <a href="http://www.ippon.fr/" target="_blank"><img src="/assets/images/logo_ippon_gris.png"
+                                                                        class="logo_footer"></a>
+                </div>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 footer_text">
+                    <!-- start widget -->
+<div class="widget">
+
+    <div class="content">
+        Fiers de notre passion pour la technologie et l'expertise dans les systèmes d'information, nous nous associons à
+        nos clients pour offrir des solutions innovantes pour leurs projets stratégiques.<br>
+        Grâce à la communication, à la curiosité et à l'esprit d'équipe, nous proposons les meilleures solutions à nos
+        clients.<br>
+    </div>
+</div>
+<!-- end widget -->
+
+<style type="text/css">
+    .footer-about_ippon {
+        text-transform: uppercase;
+        color: #999999;
+        font-weight: bold;
+        font-size: 24px;
+        padding-top: 14px;
+    }</style>                </div>
+                <div class="col-sm-4 col-sm-offset-0 pull-right col-xs-10 col-xs-offset-1 copyright">
+                    &copy; 2019 <a href="http://blog.ippon.fr" style="color:#b0b0b0;">IPPON</a>. Tous les
+                    droits sont réservés.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<a href="#" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- <div class="search-popup" id="popup-outer">
+	<div class="close-button">
+		<i class="fa fa-close"></i>
+	</div>
+	<div class="popup-inner">
+				<form id="search-form" >
+					 <input type="text" id="search-input" placeholder="Type to search" /> 
+				<i class="fa fa-search input-icon"></i>
+					 
+				</form>
+				<div id="search-results">
+					<ul class=""></ul>
+				</div>
+			
+	</div>
+</div> -->
+<script>
+	//var apiSearchUrl='http://localhost:3000';
+    //var apiSearchUrl='http://ns3023205.ip-37-187-142.eu:3000';
+   //var apiSearchUrl= ='http://blog-ippon-fr.itir.fr:3000';
+    var apiSearchUrl="https://apiblog.ippon.fr";
+    var limitItems=10;
+</script> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-ruby.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script src="/assets/js/jquery.min.js?v=1f5f6b46c3"></script>
+<script src="/assets/js/bootstrap.min.js?v=1f5f6b46c3"></script>
+<script src="/assets/js/custom.min.js?v=1f5f6b46c3"></script>
+<script src="/assets/js/plugins.js?v=1f5f6b46c3" ></script>
+<script src="/assets/js/main.js?v=1f5f6b46c3"></script>
+<script src="/assets/js/search.js?v=1f5f6b46c3"></script>
+<script src="/assets/js/readingTime.js?v=1f5f6b46c3" ></script>
+
+<script type="text/javascript">
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // $('#kindly_tap').submit(function(){
+        // var host = $(location).attr('protocol')+'//'+$(location).attr('hostname');
+        //        if ($(this).data('statut') == '0') {
+        //            var src ='/assets/images/heart.svg';
+        //             $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=d7TV3g9raZLBi75Eo4vcnqIsoHFe13eHZoPuERNURaLOLcqORNdqqCnuy0CReS3G&forum=blog-ippon-fr&thread:link='+host+'/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/&vote=1', function() {
+        //             $('#heart_art').attr('src', src);
+
+        //        });
+        //         $(this).data('statut','1');
+        //          }else{
+        //          	$(this).data('statut','0');
+        //            var src ='/assets/images/hearts.svg';
+        //             $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=d7TV3g9raZLBi75Eo4vcnqIsoHFe13eHZoPuERNURaLOLcqORNdqqCnuy0CReS3G&forum=blog-ippon-fr&thread:link='+host+'/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/&vote=-1', function() {
+        //        $('#heart_art').attr('src', src);
+
+        //        });
+        //          }
+        //        return false;
+        //      });
+        $('#kindly_tap').submit(function () {
+            var host = $(location).attr('protocol') + '//' + $(location).attr('hostname');
+            if ($(this).data('statut') == '0') {
+                var src = '/assets/images/heart.svg';
+                $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=d7TV3g9raZLBi75Eo4vcnqIsoHFe13eHZoPuERNURaLOLcqORNdqqCnuy0CReS3G&forum=blog-ippon-fr&thread:link=' + host + '/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/&vote=1', function () {
+                    $('#heart_art').attr('src', src);
+
+                });
+                $(this).data('statut', '1');
+            } else {
+                $(this).data('statut', '0');
+                var src = '/assets/images/hearts.svg';
+                $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=d7TV3g9raZLBi75Eo4vcnqIsoHFe13eHZoPuERNURaLOLcqORNdqqCnuy0CReS3G&forum=blog-ippon-fr&thread:link=' + host + '/2018/12/17/trois-ans-en-compagnie-de-mongodb-part-1-souffrance/&vote=-1', function () {
+                    $('#heart_art').attr('src', src);
+
+                });
+            }
+            return false;
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $('.recommend_form').submit(function () {
+        var url = $(this).parents('.card').data('file'),
+                btn = $(this).find('button');
+
+        if ($(this).data('statut') == '0') {
+
+            $(this).data('statut', '1');
+
+            $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=d7TV3g9raZLBi75Eo4vcnqIsoHFe13eHZoPuERNURaLOLcqORNdqqCnuy0CReS3G&forum=blog-ippon-fr&thread:link=http://blog-ippon-fr.ghost.io' + url + '&vote=1', function () {
+                btn.removeClass('white_icon').addClass('red_icon');
+            });
+
+        } else {
+            $(this).data('statut', '0');
+            $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=d7TV3g9raZLBi75Eo4vcnqIsoHFe13eHZoPuERNURaLOLcqORNdqqCnuy0CReS3G&forum=blog-ippon-fr&thread:link=http://blog-ippon-fr.ghost.io' + url + '&vote=-1', function () {
+                btn.removeClass('red_icon').addClass('white_icon');
+
+            });
+
+        }
+        return false;
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10959780-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10959780-1');
+</script>
+<script type="text/javascript" src="//ippon.automation.webmecanik.com/form/generate.js?id=35"></script>
+<script id="dsq-count-scr" src="//blog-ippon-fr.disqus.com/count.js" async></script>
+
+<script src="/assets/js/prism_Okaidia.js?v=1f5f6b46c3" async></script>
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+    function redirect(url) {
+        window.location = url;
+    }
+
+var newsletter_webmecanik= $('#mauticform_wrapper_formulairenewsletterblogipponfr').detach();
+$('.newsletter_form_append').empty().append(newsletter_webmecanik);
+
+</script>

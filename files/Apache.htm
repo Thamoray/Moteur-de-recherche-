@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="copyright" content="1998 by Jean-François Pillou">
+<META NAME="ROBOTS" content="all">
+<META NAME="author" content="Jean-François Pillou">
+<META NAME="subject" content="Apache">
+<META NAME="topic" content="htaccess">
+<META NAME="keywords" content="Apache,.htaccess,s&eacute;curit&eacute;,htaccess,htpasswd,htpassword">
+<META NAME="title" content="Apache - Les fichiers .htaccess">
+<title>Apache - Les fichiers .htaccess</title>
+<link rel="stylesheet" href="../ccm.css" type="text/css">
+
+
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualit&eacute; informatique" href="http://www.commentcamarche.net/rss/actualite.php3">
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualit&eacute;s du site CommentCaMarche.net" href="http://www.commentcamarche.net/rss/rss.php3">
+</head>
+
+<body>
+
+<table class="ccmmain">
+<tr>
+<td height="1" width="170"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="540"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="12"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="10"><img src="../images/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+</tr>
+
+<tr>
+<td colspan="2" bgcolor="#AEBFE2" style="vertical-align:top;text-align:left;height:46;background-color:#AEBFE2;">
+<table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td style="vertical-align:top;"><a href="../index.htm" target="_top"><img src="../images/logotop.png" border="0" width="328" height="42" title="Comment Ca Marche - Communaut&eacute; informatique" alt="Comment Ca Marche - Communaut&eacute; informatique"></a></td>
+    <td style="width:30px">&nbsp;</td>
+    <td style="vertical-align:middle;text-align:left"></td></tr>
+</table>
+</td>
+<td style="background-color: #AEBFE2; vertical-align:bottom;">&nbsp;</td>
+<td style="background-color: #AEBFE2;">&nbsp;</td>
+</tr>
+
+<tr>
+<td bgcolor="#8EA6D6"><div id="ccmicons"><a href="../index.htm"  ><img src="../images/icohome2.gif" name="icohome" alt="Accueil - Encyclop&eacute;die informatique" title="Accueil - Encyclop&eacute;die informatique" width="24" border="0"></a><a href="http://www.commentcamarche.net/encyclopedie"  ><img src="../images/icozip2.gif" name="icozip" alt="T&eacute;l&eacute;charger l'encyclop&eacute;die" title="T&eacute;l&eacute;charger l'encyclop&eacute;die" width="24" border="0"></a><a href="http://www.commentcamarche.net/ccmbugs/?Bug_url=%2Fapache%2Fapacht.php3#ecrire"  ><img src="../images/icowri2.gif" name="icowri" alt="Contribuer &agrave; cet article" width="24" border="0"></a><a href="http://www.commentcamarche.net/contact/"  ><img src="../images/icomail2.gif" name="icomail" alt="" title="Ecrire &agrave; Jean-Francois Pillou" width="24"  border="0"></a></div></td>
+<td colspan="3" bgcolor="#8EA6D6"></td>
+</tr>
+
+<tr>
+<td height="1"><img src="../images/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1"><img src="../images/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1" rowspan="2"><img src="../images/pixel_white.png" height="1" width="12" alt=""></td>
+
+<td bgcolor="#FFFFFF" height="100%" valign="top" rowspan="2">
+</td>
+</tr>
+
+<tr><td valign="top" colspan="3"><div id="contenu"><h1> Apache - Les fichiers .htaccess</h1><table border="0" cellpadding="0" cellspacing="0" width="722">
+	<tr>
+		<td><img src="images/apacht.gif" alt="Apache - Les fichiers .htaccess"></td>
+		<td valign="top" width="38"><a href="apacintro.htm"><img src="../images/bckward.gif" border="0" width="38" height="63" alt=""></a></td>
+				<td valign="top" width="63"><a href="../index.htm"><img src="../images/logoPClw.gif" alt="Encyclopédie" height="60" width="63" border="0"></a></td>
+		</tr>
+</table>
+<br><div id="CCMmenu">
+<table width="156">
+<tr><th>Apache</th></tr>
+<tr><td><a class="mlink" href="apacintro.htm">Apache</a></td></tr>
+<tr><td><a class="mlink" href="apacht.htm">.htaccess</a></td></tr>
+</table></div>
+<hr>
+
+Les fichiers <i>.htaccess</i> sont des fichiers de configuration d'Apache, permettant de définir des règles dans un répertoire et dans tous ses sous-répertoires
+(qui n'ont pas de tel fichier à l'intérieur). On peut les utiliser pour protéger un répertoire par mot de passe, ou pour changer le nom ou l'extension de la page index, ou encore pour interdire l'accès au répertoire.
+
+<a name="interet" class="ancre"></a><h2>Int&eacute;r&ecirc;t des fichiers htaccess</h2>
+
+<p align="justify">Les fichiers <b><i>.htaccess</i></b> peuvent être utilisés dans n'importe quel répertoire virtuel ou sous-répertoire.
+
+<p align="justify">Les principales raisons d'utilisation des fichiers .htaccess sont&nbsp;:
+<ul>
+<li>Gérer l'accès à certains fichiers.
+<li>Ajouter un mime-type.
+<li>Protéger l'accès à un répertoire par un mot de passe.
+<li>Protéger l'accès à un fichier par un mot de passe.
+<li>D&eacute;finir des pages d'erreurs personnalis&eacute;es.
+</ul>
+
+<a name="principe" class="ancre"></a><h2>Principe des fichiers htaccess</h2>
+
+<p align="justify">Le fichier <i>.htaccess</i> est placé dans le répertoire dans lequel il doit agir. Il agit ainsi sur les permissions du répertoire qui le contient et de tous ses sous-répertoires.
+Vous pouvez placer un autre fichier <i>.htaccess</i> dans un sous-répertoire d'un répertoire déjà contrôlé par un fichier <i>.htaccess</i>.
+
+<br/>Le fichier .htaccess du répertoire parent reste en &laquo;&nbsp;activité&nbsp;&raquo; tant que les fonctionnalités n'ont pas été réécrites.
+
+<p align="justify">Les fonctionnalités de ces fichiers étant très puissantes, lisez bien ce tutorial avant de vous lancer dans la création des vôtres.
+
+<p align="justify">
+<table border="0">
+<tr>
+<td>
+
+<img src="../images/warning.gif"></td>
+<td>
+
+Sous Windows, il est logiquement impossible de créer un fichier .htaccess, puisque Windows ne vous autorisera pas à sauvegarder le fichier tel quel.
+Voici la démarche à suivre&nbsp;:
+<ul>
+<li>Créer un fichier texte &laquo;&nbsp;fichier.htaccess&nbsp;&raquo;
+<li>Renommer le fichier en supprimant &laquo;&nbsp;fichier&nbsp;&raquo;
+</ul>
+
+Remarque : Selon votre éditeur, vous pouvez également sauvegarder le fichier directement en .htaccess. Sous Notepad, il suffit de mettre des guillemets autour du nom de fichier tandis que UltraEdit gère le nom lui-même.</td>
+</tr>
+</table>
+
+<a name="empecher" class="ancre"></a><h2>Emp&ecirc;cher l'acc&egrave;s &agrave; des ressources</h2>
+
+<p align="justify">Un fichier <i>.htaccess</i> est compos&eacute; de deux sections&nbsp;:
+<ul>
+<li>Une premi&egrave;re section contient les chemins vers les fichiers contenant les d&eacute;finitions
+de groupes et d'utilisateurs&nbsp;:
+
+<pre class="Code">AuthUserFile /repertoire/de/votre/fichier/.FichierDeMotDePasse
+AuthGroupFile /repertoire/de/votre/fichier/.FichierDeGroupe
+AuthName "Acc&egrave;s prot&eacute;g&eacute;"
+AuthType Basic</pre>
+<ul>
+<li><i>AuthUserFile</i> d&eacute;finit le chemin d'acc&egrave;s absolu vers le fichier de mot de passe.
+<li><i>AuthGroupFile</i> définit le chemin d'acc&egrave;s absolu vers le fichier de groupe.
+<li>AuthName entraîne l'affichage dans le navigateur Internet de&nbsp;:
+
+<i>&laquo;&nbsp;Tapez votre nom d'utilisateur et votre mot de passe. Domaine: &quot;Accès protégé&quot;&nbsp;&raquo;</i>
+<li>AuthType Basic précise qu'il faut utiliser AuthUserFile pour l'authentification.
+</ul>
+<li>Une seconde section contient la d&eacute;finition des conditions d'acc&egrave;s&nbsp;:
+
+<pre class="Code">&lt;Limit GET POST&gt;
+
+Require valid-user
+{instruction d'accès à satisfaire }
+&lt;/Limit&gt;</pre>
+<ul>
+<li>La balise LIMIT poss&egrave;de en attribut la valeur GET (en majuscule) et/ou la valeur POST, afin de d&eacute;finir le type
+de <a href="../internet/http.htm">m&eacute;thode du protocole HTTP</a> auxquelles la restriction s'applique
+<li><i>require valid-user</i> précise que l'on autorise uniquement les personnes identifiées. Il est &eacute;galement possible de pr&eacute;ciser
+explicitement le nom des personnes autoris&eacute;es &agrave; s'identifier : <i>require user {username}</i>
+</ul>
+</ul>
+
+
+<p align="justify">
+<table border="0">
+<tr>
+<td>
+
+<img src="../images/warning.gif"></td>
+<td>
+<ul>
+<li>Sous Unix, le chemin d'acc&egrave;s vers les fichiers de mots de passe et de groupes est de la forme suivante&nbsp;:
+
+<pre class="Code">/repertoire1/repertoire2/.../.FichierDeMotDePasse</pre>
+<li>Sous Windows, le chemin d'acc&egrave;s contient des <b>antislash</b> (<i>barre oblique inverse</i>) contrairement &agrave; la notation Unix&nbsp;:
+
+<pre class="Code">c:\repertoire1\repertoire2\...\.FichierDeMotDePasse</pre>
+</ul></td>
+</tr>
+</table>
+
+<a name="passwd" class="ancre"></a><h2>Protéger un répertoire par un mot de passe</h2>
+
+<p align="justify">Il s'agit d'une des applications les plus utiles du fichier <b><i>.htaccess</i></b>
+
+car elle permet de d&eacute;finir de fa&ccedil;on s&ucirc;re (&agrave; l'aide
+d'un login et d'un mot de passe) les droits d'acc&egrave;s
+&agrave; des fichiers par certains utilisateurs.
+
+<br/>La syntaxe est la suivante&nbsp;:
+
+<pre class="Code">AuthUserFile {emplacement du fichier de mot de passe}
+AuthGroupFile {emplacement du fichier de groupe}
+AuthName "Acc&egrave;s prot&eacute;g&eacute;"
+AuthType Basic
+&lt;LIMIT GET POST&gt;
+
+Require valid-user
+&lt;/LIMIT&gt;</pre>
+
+<p align="justify">La commande <i>AuthUserFile</i> permet de d&eacute;finir l'emplacement du fichier contenant
+les logins et les <a href="../attaques/passwd.htm">mots de passe</a> des utilisateurs
+autoris&eacute;s &agrave; acc&eacute;der &agrave; une ressource donn&eacute;e.
+
+<p align="justify">La commande <i>AuthGroupFile</i> permet de d&eacute;finir l'emplacement du fichier contenant
+les groupes d'utilisateurs autoris&eacute;s &agrave; s'identifier. Il est possible d'outrepasser
+cette d&eacute;claration en d&eacute;clarant le fichier suivant : <i>/dev/null</i>.
+
+<p align="justify">Voici un exemple de fichier <b><i>.htaccess</i></b>&nbsp;:
+
+<pre class="Code">ErrorDocument 403 http://www.commentcamarche.net/accesrefuse.php3
+AuthUserFile /repertoire/de/votre/fichier/.FichierDeMotDePasse
+AuthGroupFile /dev/null
+AuthName "Accès s&eacute;curis&eacute; au site CCM"
+AuthType Basic
+&lt;LIMIT GET POST&gt;
+
+Require valid-user
+&lt;/LIMIT&gt;</pre>
+
+
+<p align="justify">Le fichier de mot de passe est un fichier texte devant contenir sur chacune des ses lignes le nom de chaque utilisateur
+suivi des deux points (<i>:</i>), puis du mot de passe crypt&eacute; (solution recommand&eacute;e) ou en clair.
+
+<p align="justify">Voici un exemple de fichier de mot de passe non crypt&eacute; (ici <b><i>.FichierDeMotDePasse</i></b>)
+
+<pre class="Code">JFPillou:Toto504
+Damien:Robert(32)
+Comma:Joe[leTaxi]</pre>
+
+Voici le m&ecirc;me fichier contenant des mots de passe crypt&eacute;s&nbsp;:
+
+<pre class="Code">JFPillou:$apr1$Si0.....$teyL5Y7BR4cHj0sX309Jj0
+Damien:$apr1$TD1.....$sfPTHjoufoNsda4HsD1oL0
+Comma:$apr1$zF1.....$wYKqRu2aVYlAEQnxVkly8.</pre>
+
+
+<p align="justify"><i>.FichierDeMotDePasse</i> est un simple fichier texte contenant les noms des utilisateurs suivis d'un : puis du mot de passe crypté (ou non) de cet utilisateur.
+
+<br/>Ce fichier de mot de passe ne devrait pas être mis dans un répertoire virtuel Internet (mais comment faire autrement si l'on ne possède pas de serveur Internet et que notre site est hébergé par un tiers ?).
+Il faut de plus prendre la précaution de mélanger des majuscules, des minuscules, des chiffres et des symboles dans le nom du fichier...
+
+<a name="crypter" class="ancre"></a><h2>Crypter les mots de passe</h2>
+
+<p align="justify">Apache fournit un outil permettant de g&eacute;n&eacute;rer facilement des mots de passe crypt&eacute;s
+(aussi bien sous Windows que sous Unix), il s'agit de l'utilitaire <i>htpasswd</i> accessible dans le sous-r&eacute;pertoire <i>bin</i>
+
+d'Apache.
+
+<p align="justify">La syntaxe de cet utilitaire est la suivante&nbsp;:
+<ul>
+<li>Pour cr&eacute;er un nouveau fichier de mots de passe&nbsp;:
+
+<pre class="Code">htpasswd -c {chemin du fichier de mot de passe} utilisateur</pre>
+<li>Pour ajouter un nouvel utilisateur/mot de passe &agrave; un fichier existant&nbsp;:
+
+<pre class="Code">htpasswd {chemin du fichier de mot de passe} utilisateur</pre>
+</ul>
+
+<p align="justify">Le mot de passe sera demand&eacute; en ligne de commande avec une confirmation.
+
+<br/>Voici un exemple&nbsp;:
+
+<pre class="Code">htpasswd -c /www/secure/.htpasswd JFPillou</pre>
+
+
+<p align="justify">Voici un petit utilitaire vous permettant de crypter vos mots de passe en ligne&nbsp;:
+
+<form action="crypt.php3" method="post">
+
+<br/>Utilisateur &nbsp;: <input type="text" name="login" size="8">
+
+<br/>Mot de passe : <input type="password" name="passwd" size="8">
+
+<br/><input type="submit" value="crypter">
+
+</form>
+
+<a name="domaine" class="ancre"></a><h2>Empêcher l'accès à un répertoire par un domaine</h2>
+
+<p align="justify">La syntaxe pour bloquer l'acc&egrave;s d'un r&eacute;pertoire par un domaine
+est la suivante&nbsp;:
+
+<pre class="Code">Allow (all, [liste de domaine])
+Deny (all, [liste de domaine])
+Order (Allow,Deny ou Deny,Allow)</pre>
+
+
+<pre class="Code">Order Deny, Allow
+Deny from ..LeNomDuDomaine.com</pre>
+
+
+<p align="justify">Toutes les personnes (requêtes) provenant du domaine .LeNomDuDomaine.com ne pourront avoir accès aux ressources comprises dans le répertoire et ses sous-répertoires.
+La commande Order sert à préciser explicitement que la commande Deny va bien annuler l'effet de Allow et non l'inverse.
+
+<p align="justify">Voici un exemple de restriction d'acc&egrave;s&nbsp;:
+
+<pre class="Code">ErrorDocument 403 http://www.commentcamarche.net/accesrefuse.php3
+AuthUserFile /repertoire/de/votre/fichier/.FichierDeMotDePasse
+AuthGroupFile /dev/null
+AuthName "Accès s&eacute;curis&eacute; au site CCM"
+AuthType Basic
+&lt;LIMIT GET POST&gt;
+
+order deny,allow
+deny from all
+allow from 193.48.172.2
+require user JFPillou
+&lt;/LIMIT&gt;</pre>
+
+<p align="justify">Dans ce cas, l'acc&egrave;s ne sera possible que pour l'utilisateur <i>JFPillou</i> &agrave; partir de l'adresse IP
+
+<i>193.48.172.2</i> et avec le bon mot de passe.
+
+<a name="fichier" class="ancre"></a><h2>Empêcher l'accès à fichier particulier</h2>
+
+<p align="justify">Par d&eacute;faut, Apache applique les restrictions du fichier <i>.htaccess</i> &agrave; l'ensemble des fichiers
+du r&eacute;pertoire dans lequel il se trouve ainsi qu'&agrave; tous les fichiers contenus dans ses sous-r&eacute;pertoires.
+
+<p align="justify">Il est &eacute;galement possible de restreindre l'acc&egrave;s pour un ou plusieurs fichiers du r&eacute;pertoire
+gr&acirc;ce &agrave; la balise <i>&lt;Files&gt;</i>.
+
+<p align="justify">Voici un exemple de restriction aux fichiers <i>admin.php3</i> et <i>admin2.php3</i>&nbsp;:
+
+<pre class="Code">&lt;Files admin.php3&gt;
+
+AuthUserFile /repertoire/de/votre/fichier/.FichierDeMotDePasse
+AuthGroupFile /dev/null
+AuthName "Accès s&eacute;curis&eacute; au site CCM"
+AuthType Basic
+&lt;LIMIT GET POST&gt;
+
+require user JFPillou
+&lt;/LIMIT&gt;
+
+&lt;/Files&gt;
+
+&lt;Files admin2.php3&gt;
+
+AuthUserFile /repertoire/de/votre/fichier/.FichierDeMotDePasse
+AuthGroupFile /dev/null
+AuthName "Accès s&eacute;curis&eacute; au site CCM"
+AuthType Basic
+&lt;LIMIT GET POST&gt;
+
+require user JFPillou
+&lt;/LIMIT&gt;
+
+&lt;/Files&gt;</pre>
+
+
+<p align="justify">
+<table border="0">
+<tr>
+<td>
+
+<img src="../images/warning.gif"></td>
+<td>
+
+Il faut utiliser une seule balise &lt;Files&gt; par fichier.
+
+<br/>Sinon, l'erreur suivante est reportée dans le fichier de log des erreurs&nbsp;:
+
+<pre class="Code">.htaccess: Multiple <Files> arguments not (yet) supported. </pre>
+
+<br/>Pour info, il faut ajouter que depuis Apache 1.3, il est conseillé d'utiliser la balise &lt;FilesMatch&gt; à la place de la balise &lt;Files&gt;.
+
+<br/>Cette nouvelle balise ne supporte aussi qu'un seul argument mais on peut traiter plusieurs fichiers grâce à une expression régulière.</td>
+</tr>
+</table>
+
+<a name="typefichier" class="ancre"></a><h2>Empêcher l'accès à un type de fichiers par un domaine</h2>
+
+<p align="justify">
+
+
+<pre class="Code">&lt;Files *.png&gt;
+
+Order Deny, Allow
+Deny from .LeNomDuDomaine.com
+&lt;/Files&gt;</pre>
+
+<p align="justify">Toutes les personnes (requêtes) provenant du domaine <i>.LeNomDuDomaine.com</i> ne pourront avoir accès aux images, dont l'extension est .png, comprises dans le répertoire et ses sous-répertoires.
+
+<a name="groupe" class="ancre"></a><h2>Autoriser l'accès à un groupe de fichiers par un domaine et un pays</h2>
+
+<p align="justify">
+
+
+<pre class="Code">&lt;Files php*&gt;
+
+Order Allow, Deny
+Deny from all
+Allow from .phpfrance.com
+Allow from .fr
+&lt;/Files&gt;</pre>
+
+<p align="justify">Toutes les personnes (requêtes) provenant du domaine <i>.phpfrance.com</i> ou des domaines ayant la terminaison <i>.fr</i> pourront avoir accès aux fichiers commençant par php (par exemple, les fichiers <i>phpbonjour.html</i>, <i>phpaurevoir.vxf</i>) compris dans le répertoire et ses sous-répertoires.
+
+<a name="user" class="ancre"></a><h2>Protéger un répertoire par un login</h2>
+
+<p align="justify">Cette m&eacute;thode (beaucoup moins s&ucirc;re que la pr&eacute;c&eacute;dente) permet une authentification
+de bas niveau uniquement par le nom de l'utilisateur. La syntaxe est la suivante&nbsp;:
+
+<pre class="Code">Require (user [liste des utilisateurs], group [liste des groupes], valid-user)</pre>
+
+Voici un exemple de ligne du fichier <i>.htaccess</i>&nbsp;:
+
+<pre class="Code">Require User Damien Comma PumpPHP Jeff Rastapaye</pre>
+
+<p align="justify">Tout utilisateur souhaitant rentrer dans le répertoire ou un de ses sous-répertoires sera refusé sauf s'il s'identifie en donnant un nom figurant dans la liste.
+
+<a name="user" class="ancre"></a><h2>Obliger un utilisateur à satisfaire à au moins une des conditions</h2>
+
+<p align="justify">Voici la syntaxe&nbsp;:
+
+<pre class="Code">Satisfy (any, all)</pre>
+
+
+<pre class="Code">Order Allow, Deny
+Deny from all
+Allow from .free.fr
+Require User Damien Comma PumpPHP Jeff Rastapaye
+Satisfy Any</pre>
+
+<p align="justify">Ce qui signifie que l'accès au répertoire sera bloqué pour tout le monde à l'exception
+des personnes qui s'identifient et des requêtes provenant du domaine <i>.free.fr</i>.
+
+<a name="types" class="ancre"></a><h2>Gérer les types de fichiers</h2>
+
+<p align="justify">Un <a href="../systemes/mime.htm">type MIME</a> (en anglais <i>MIME type</i>) est un ensemble de types de fichiers
+standard, permettant d'associer une extension de fichier donn&eacute;e &agrave; une application, afin d'automatiser
+le lancement de l'application.
+
+<a name="mime" class="ancre"></a><h2>Ajouter un Mime-Type à un répertoire</h2>
+
+<p align="justify">La syntaxe est la suivante&nbsp;:
+
+<pre class="Code">AddType (mime/type [liste d'extension])</pre>
+
+Voici un exemple de mise en oeuvre du fichier <b><i>.htaccess</i></b>&nbsp;:
+
+<pre class="Code">AddType image/x-photoshop PSD
+AddType application/x-httpd-php .php3
+AddType application/x-httpd-php .htm</pre>
+
+<p align="justify">Le serveur enverra au navigateur Internet le fichier en lui disant de lancer le programme PhotoShop
+(s'il est installé sur votre machine) et de lui donner le fichier.
+
+<p align="justify">Habituellement, ceci est utilisé pour des fichiers nécessitant un Plug-In particulier non reconnu par votre navigateur.
+
+<br/>Cette commande permet aussi d'annuler tout élément prédéfini. Ainsi, vous pouvez enregistrer un fichier <i>.wav</i> avec une extension
+.gif et préciser au navigateur de considérer les fichiers .gif comme des fichiers audio !
+
+<p align="justify">En pratique, on pourra donc utiliser cette commande pour ordonner à PHP de parser d'autres extensions de fichier, <i>.htm</i> par exemple.
+
+<a name="forcer" class="ancre"></a><h2>Forcer tous les fichiers d'un répertoire à un Mime-Type</h2>
+
+<p align="justify">Voici la syntaxe &agrave; adopter&nbsp;:
+
+<pre class="Code">ForceType (mime/type)</pre>
+
+<p align="justify">Par exemple avec la ligne suivante, tous les fichiers du répertoire contenant le fichier <b><i>.htaccess</i></b> seront considérés comme étant des fichiers
+
+<i>.jpg</i> quelle que soit leur extension&nbsp;:
+
+<pre class="Code">ForceType image/jpg</pre>
+
+Ce type de commande ne peut être utilisé dans les bornes !
+
+<a name="defaut" class="ancre"></a><h2>Définir les extensions de fichiers par défaut</h2>
+
+<p align="justify">La syntaxe &agrave; suivre est&nbsp;:
+
+<pre class="Code">DefaultType (mime/type)</pre>
+
+Par exemple
+
+<pre class="Code">DefaultType text/html</pre>
+
+<p align="justify">Cette option vous permet de définir le comportement par défaut du navigateur face à des extensions lui étant inconnues.
+
+<br/>Ici, il prendra tout fichier inconnu (par exemple '<i>bonjour</i>', '<i>Rastapaye.phpfrance</i>') en tant que document HTML.
+
+<!--
+
+<a name="autres" class="ancre"></a><h2>Autres utilités</h2>
+
+<p align="justify">
+
+-->
+
+<a name="erreurs" class="ancre"></a><h2>Personnalisation des messages d'erreurs</h2>
+
+<p align="justify">Il s'agit d'une fonctionnalit&eacute; pratique car elle permet de d&eacute;finir
+une page par d&eacute;faut pour un type d'erreur donn&eacute; (<a href="../internet/http.htm#codes">Voir l'ensemble des codes d'erreur et leur signification</a>)...
+
+<p align="justify">Cela permet d'une part de guider l'utilisateur au lieu d'afficher la banale page d'erreur
+du navigateur, ainsi que d'&eacute;gayer la navigation m&ecirc;me en cas d'erreur.
+
+<pre class="Code">ErrorDocument (code-à-3-chiffres [nom du fichier ou texte ou url])</pre>
+
+<p align="justify">Les deux lignes suivantes permettent de d&eacute;finir des pages d'erreurs personnalis&eacute;es au cas o&ugrave;
+
+l'acc&egrave;s &agrave; un document serait interdit ou bien que le document n'existe pas&nbsp;:
+
+<pre class="Code">ErrorDocument 403 /erreurs/403.php3
+ErrorDocument 404 /erreurs/404.php3</pre>
+
+<p align="justify">Ceci vous permet de donner un message d'erreur personnalisé remplaçant les fichiers fournis avec le navigateur.
+
+<br/>Voici quelques-unes des  <a href="../internet/http.htm#codes">erreurs</a> les plus courantes à personnaliser&nbsp;:
+<ul>
+<li>401 Unauthorized : la personne n'a pas passé avec succès l'identification.
+<li>403 Forbidden : le serveur n'a pas le droit de répondre à votre requête.
+<li>404 Not Found : le serveur n'a pas trouvé le document souhaité.
+</ul>
+
+<a name="index" class="ancre"></a><h2>Changer le fichier index par défaut</h2>
+
+<p align="justify">Le fichier <i>index</i> est le fichier qui est affich&eacute; lorsque aucun nom de fichier
+n'est d&eacute;fini dans l'<a href="../internet/url.htm">URL</a> (par exemple <i>http://www.monserveur.com/repertoire</i>).
+Cela permet d'&eacute;viter que le navigateur liste l'ensemble des fichiers contenus dans le r&eacute;pertoire (pour des raisons
+de confidentialit&eacute;).
+
+<p align="justify">La syntaxe pour effectuer ce type d'op&eacute;ration est la suivante&nbsp;:
+
+<pre class="Code">DirectoryIndex (fichiers)</pre>
+
+Voici un exemple de mise en application&nbsp;:
+
+<pre class="Code">DirectoryIndex index.php index.html index.phtml /erreurs/403.php</pre>
+
+<p align="justify">Lorsque vous essayez d'accéder au répertoire sans préciser la page à afficher,
+Apache va avoir recours à la directive <i>DirectoryIndex</i>. En général, par défaut, cette directive
+pointe vers <i>index.html</i> puis <i>index.htm</i>.
+
+<p align="justify">Dans l'exemple ci-dessus, Apache va commencer par chercher <i>index.php</i>, puis <i>index.html</i>, et ensuite <i>index.phtml</i>.
+Si aucun de ces trois fichiers existent, la page <i>403.php</i> (se trouvant dans la racine) sera affichée pour éviter de lister le répertoire.
+
+<p align="right">Tutorial écrit par <a href="mailto:webmaster@commentcamarche.net">Jean-Fran&ccedil;ois Pillou</a> et <a href="http://douglas.six.free.fr">Douglas Six</a>
+
+<h2 id="sujets_sim">Trucs & astuces pertinents trouv&eacute;s dans la base de connaissances</h2><table class="simili"><tr class="sb">
+<td style="width:75px"><span class="">28/12&nbsp;00h03</span></td><td valign="middle"><a href="http://www.commentcamarche.net/faq/sujet-4795-php-recuperer-login-et-mot-de-passe-passes-par-un-htaccess"><img src="../images/carre.gif" border="0" alt=""></a>&nbsp;<a href="http://www.commentcamarche.net/faq/sujet-4795-php-recuperer-login-et-mot-de-passe-passes-par-un-htaccess">Récupérer login et mot de passe passés par un .htaccess</a> (<a href="http://www.commentcamarche.net/faq/82-php">PHP</a>)</td>
+
+</tr>
+<tr class="sa"><td colspan="3" style="text-align:right"><img src="../images/plus.png" alt="htaccess" border="0"> Plus d'astuces sur &laquo;&nbsp;<a href="../astuces/htaccess"><b>htaccess</b></a>&nbsp;&raquo;</td></tr></table><h2 id="discus_sim">Discussions pertinentes trouv&eacute;es dans le forum</h2><table class="simili"><tr class="sb">
+<td><span class="Dategris">01/02&nbsp;12h46</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1277143-probleme-htaccess-chez-free#2005-11-25%2019%3A54%3A23"><img src="../images/carrevalid.png" border="0" alt="htaccess free"></a><a href="http://www.commentcamarche.net/forum/affich-1277143-probleme-htaccess-chez-free">&nbsp;Probleme htaccess chez Free</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">D&eacute;veloppement</a></td>
+<td><span class="Date">25/11&nbsp;19h54</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-1277143-probleme-htaccess-chez-free#2005-11-25%2019%3A54%3A23">Ptitboiss</a></td><td style="text-align:center"><span class="Texte">18</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Date">20/02&nbsp;22h44</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2695299-htaccess-pb-chez-free#2007-02-22%2009%3A14%3A18"><img src="../images/carrevalid.png" border="0" alt=".htaccess free"></a><a href="http://www.commentcamarche.net/forum/affich-2695299-htaccess-pb-chez-free">&nbsp;[.htaccess] pb chez free</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Datered">22/02&nbsp;09h14</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-2695299-htaccess-pb-chez-free#2007-02-22%2009%3A14%3A18">raiden313</a></td><td style="text-align:center"><span class="Texte">12</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">18/08&nbsp;09h57</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2343431-difference-php-acces-script-et-htaccess#2007-01-25%2018%3A06%3A47"><img src="../images/carrevalid.png" border="0" alt="différence php acces script .htaccess"></a><a href="http://www.commentcamarche.net/forum/affich-2343431-difference-php-acces-script-et-htaccess">&nbsp;Différence PHP[acces script] et .htaccess</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">D&eacute;veloppement</a></td>
+<td><span class="Date">25/01&nbsp;18h06</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-2343431-difference-php-acces-script-et-htaccess#2007-01-25%2018%3A06%3A47">riton</a></td><td style="text-align:center"><span class="Texte">6</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">25/06&nbsp;18h37</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1629194-htaccess#2006-12-05%2023%3A58%3A46"><img src="../images/carrevalid.png" border="0" alt=".htaccess"></a><a href="http://www.commentcamarche.net/forum/affich-1629194-htaccess">&nbsp;.htaccess</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-10-internet">Internet</a></td>
+<td><span class="Date">05/12&nbsp;23h58</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1629194-htaccess#2006-12-05%2023%3A58%3A46">fragor</a></td><td style="text-align:center"><span class="Texte">6</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">14/06&nbsp;23h33</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2273128-securite-problme-avec-htaccess#2006-06-15%2011%3A48%3A02"><img src="../images/carrevalid.png" border="0" alt="securite htaccess"></a><a href="http://www.commentcamarche.net/forum/affich-2273128-securite-problme-avec-htaccess">&nbsp;[securite]problme avec htaccess</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">15/06&nbsp;11h48</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-2273128-securite-problme-avec-htaccess#2006-06-15%2011%3A48%3A02">kain31</a></td><td style="text-align:center"><span class="Texte">5</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">02/01&nbsp;11h59</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2012497-aide-avec-chemin-php-htaccess#2006-01-02%2020%3A52%3A58"><img src="../images/carrevalid.png" border="0" alt="chemin.php .htaccess"></a><a href="http://www.commentcamarche.net/forum/affich-2012497-aide-avec-chemin-php-htaccess">&nbsp;aide avec chemin.php (.htaccess)</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">02/01&nbsp;20h52</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-2012497-aide-avec-chemin-php-htaccess#2006-01-02%2020%3A52%3A58">Thom@s</a></td><td style="text-align:center"><span class="Texte">3</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">15/01&nbsp;13h19</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2038718-htaccess-recuperer-le-login-dans-ma-page#2006-12-14%2013%3A49%3A28"><img src="../images/carrevalid.png" border="0" alt="htaccess récupérer login page"></a><a href="http://www.commentcamarche.net/forum/affich-2038718-htaccess-recuperer-le-login-dans-ma-page">&nbsp;[htaccess] Récupérer le login dans ma page...</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">D&eacute;veloppement</a></td>
+<td><span class="Date">14/12&nbsp;13h49</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-2038718-htaccess-recuperer-le-login-dans-ma-page#2006-12-14%2013%3A49%3A28">bennap</a></td><td style="text-align:center"><span class="Texte">3</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">23/01&nbsp;10h42</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2053527-erreur-401-free-et-htaccess#2006-12-15%2015%3A26%3A23"><img src="../images/carrevalid.png" border="0" alt="401 free .htaccess"></a><a href="http://www.commentcamarche.net/forum/affich-2053527-erreur-401-free-et-htaccess">&nbsp;erreur 401, free et .htaccess</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">15/12&nbsp;15h26</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-2053527-erreur-401-free-et-htaccess#2006-12-15%2015%3A26%3A23">xeno1887</a></td><td style="text-align:center"><span class="Texte">3</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">11/06&nbsp;11h47</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1592381-config-apache-htaccess-et-htpasswd#2007-02-01%2015%3A41%3A44"><img src="../images/carrevalid.png" border="0" alt="config apache .htaccess .htpasswd"></a><a href="http://www.commentcamarche.net/forum/affich-1592381-config-apache-htaccess-et-htpasswd">&nbsp;Config Apache + .htaccess et .htpasswd</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-5-reseaux">Réseaux</a></td>
+<td><span class="Date">01/02&nbsp;15h41</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1592381-config-apache-htaccess-et-htpasswd#2007-02-01%2015%3A41%3A44">lilimilou29</a></td><td style="text-align:center"><span class="Texte">2</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">29/09&nbsp;13h41</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1824292-question-sur-le-htaccess#2005-09-30%2009%3A48%3A21"><img src="../images/carrevalid.png" border="0" alt="htaccess"></a><a href="http://www.commentcamarche.net/forum/affich-1824292-question-sur-le-htaccess">&nbsp;question sur le htaccess</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">D&eacute;veloppement</a></td>
+<td><span class="Date">30/09&nbsp;09h48</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-1824292-question-sur-le-htaccess#2005-09-30%2009%3A48%3A21">pierreb</a></td><td style="text-align:center"><span class="Texte">2</span></td>
+</tr>
+	<tr class="sa">
+	<td colspan="2"><span class="Texte"><img src="../images/carreblock.gif" width="12" alt="" title="Discussion ferm&eacute;e">Discussion ferm&eacute;e
+    <img src="../images/carrevalid.png" width="12" alt="" title="Probl&egrave;me r&eacute;solu">Probl&egrave;me r&eacute;solu</span></td>
+	<td style="vertical-align:top;text-align:right;" colspan="3"><img src="../images/plus.png" alt="htaccess" border="0"> Plus de discussions sur &laquo;&nbsp;<a href="http://www.commentcamarche.net/f/htaccess"><b>htaccess</b></a>&nbsp;&raquo;</td></tr></table>
+<br><span class="Footer">Ce document intitul&eacute; &laquo;&nbsp;<a href="http://www.commentcamarche.net/apache/apacht.php3">Apache - Les fichiers .htaccess</a>&nbsp;&raquo; issu de l'<a href="http://www.commentcamarche.net/encyclopedie/">encyclop&eacute;die</a> <a href="http://www.commentcamarche.net/informatique/informatique.php3">informatique</a> <a href="http://www.commentcamarche.net">Comment &Ccedil;a Marche</a> (<a href="http://www.commentcamarche.net/">www.commentcamarche.net</a>) est mis &agrave; disposition sous les termes de la licence <a href="../ccmguide/ccmlicence.htm">Creative Commons</a>.
+Vous pouvez copier, modifier des copies de cette page, dans les conditions fix&eacute;es par la licence, tant que cette note appara&icirc;t clairement.</span>
+<br>&nbsp;
+<center><a href="apacintro.htm"><img src="../images/bckward.gif" border="0" width="38" height="63" alt=""></a>
+</center>
+</div>
+
+</td>
+</tr>
+
+<tr><th colspan="4" style="background-color:#CED7F6">&nbsp;</th></tr>
+</table>
+<div id="footer"><br><a href="../ccmguide/ccmintro.htm"><b>A propos</b></a> | <a href="../ccmguide/cgu-conditions-generales.htm"><b>Conditions g&eacute;n&eacute;rales</b></a>  | &copy; Tous droits r&eacute;serv&eacute;s 2007 <a href="http://www.commentcamarche.net">Quidéa</a>
+</div>
+</body>
+</html>

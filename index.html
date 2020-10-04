@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Moteur de Recherche</title>
+<link rel="stylesheet" href="styles/style.css" type="text/css"	media="screen">
+</head>
+<style type="text/css">
+	
+
+</style>
+<body style="background-image: url('images/back.jpg');background-position: center;
+  background-repeat: no-repeat;background-size: cover;">
+
+	<h2 align="center" style="color:#000;font-family:Castellar;font-size: 300%;">Thamoray</h2><br /><br /><br /><br /><br /><br />
+	<p align="center">
+	
+		<a href = "indexationV6.php" ><input type="submit" value="Indexation" id="menu" style="width:300px; height:70px; background-color:rgb(0, 255, 8); box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"/></a>
+		<a href = "index.php" ><input type="submit" value="Moteur de recherche" id="menu" style="width:300px; height:70px; background-color: rgb(0, 255, 208);  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"/></a>
+		<a href = "Stat_indx.php" ><input type="submit" value="Trace processus" id="menu" style="width:300px; height:70px; background-color: rgb(255, 240, 0);  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"/></a>
+	
+	</p>
+	
+	<form method="POST" action="upload.php" enctype="multipart/form-data">
+     <!-- On limite le fichier à 1000Ko -->
+     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"><br/><br/>
+     <div align="center" > <input type="file" name="avatar" />
+     <input type="submit" name="envoyer" value="Envoyer"></div> 
+	</form>
+
+	
+	
+	
+	
+</body>
+</html>

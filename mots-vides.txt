@@ -1,0 +1,1307 @@
+﻿II
+1
+III
+2
+IV
+3
+VI
+4
+VII
+5
+VIII
+6
+XI
+7
+XII
+8
+XIII
+9
+XIV
+0
+XIX
+$
+XV
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+XVI
+XVII
+XVIII
+XX
+XXI
+XXII
+XXIII
+XXIV
+XXIX
+XXV
+XXVI
+XXVII
+XXVIII
+XXX
+XXXI
+XXXII
+XXXIII
+XXXIV
+XXXIX
+XXXV
+XXXVI
+XXXVII
+XXXVIII
+adieu
+afin
+ah
+ai
+aie
+aient
+aies
+ait
+al.
+alerte
+allô
+alors
+apr.
+après
+arrière
+as
+attendu
+attention
+au
+aucun
+aucune
+aucunes
+aucuns
+audit
+auquel
+aura
+aurai
+auraient
+aurais
+aurait
+auras
+aurez
+auriez
+aurions
+aurons
+auront
+autant
+autre
+autres
+autrui
+aux
+auxdites
+auxdits
+auxquelles
+auxquels
+avaient
+avais
+avait
+avant
+avec
+avez
+aviez
+avions
+avoir
+avons
+ayant
+ayante
+ayantes
+ayants
+ayez
+ayons
+aïe
+bah
+barbe
+basta
+beaucoup
+bernique
+bien
+bigre
+billiard
+bis
+bof
+bon
+bougre
+boum
+bravissimo
+bravo
+car
+ce
+ceci
+cela
+celle
+celles
+celui
+centième
+centièmes
+cents
+cependant
+certaines
+certains
+ces
+cet
+cette
+ceux
+chacun
+chacune
+chaque
+chez
+chic
+chiche
+chouette
+chut
+ciao
+ciel
+cinq
+cinquante
+cinquantième
+cinquantièmes
+cinquième
+cinquièmes
+clac
+clic
+comme
+comment
+concernant
+contre
+corbleu
+coucou
+couic
+crac
+cric
+crénom
+da
+dame
+damnation
+dans
+de
+debout
+depuis
+derrière
+des
+desdites
+desdits
+desquelles
+desquels
+deux
+deuxième
+deuxièmes
+devaient
+devais
+devait
+devant
+devante
+devantes
+devants
+devez
+deviez
+devions
+devoir
+devons
+devra
+devrai
+devraient
+devrais
+devrait
+devras
+devrez
+devriez
+devrions
+devrons
+devront
+dia
+diantre
+dix
+dixième
+dixièmes
+dois
+doit
+doive
+doivent
+doives
+donc
+dont
+doucement
+douze
+douzième
+douzièmes
+du
+dudit
+due
+dues
+duquel
+durant
+durent
+dus
+dussent
+dut
+dès
+dû
+dût
+eh
+elle
+elles
+en
+encontre
+endéans
+entre
+envers
+es
+et
+eu
+eue
+eues
+euh
+eurent
+eurêka
+eus
+eusse
+eussent
+eusses
+eussiez
+eussions
+eut
+eux
+excepté
+eûmes
+eût
+eûtes
+fi
+fichtre
+fixe
+flûte
+foin
+fors
+fouchtra
+furent
+fus
+fusse
+fussent
+fusses
+fussiez
+fussions
+fut
+fûmes
+fût
+fûtes
+gare
+grâce
+gué
+ha
+halte
+hardi
+hein
+hem
+hep
+heu
+ho
+holà
+hop
+hormis
+hors
+hou
+hourra
+hue
+huit
+huitante
+huitantième
+huitième
+huitièmes
+hum
+hurrah
+hé
+hélas
+il
+ils
+jarnicoton
+je
+jusque
+la
+ladite
+laquelle
+las
+le
+ledit
+lequel
+les
+lesdites
+lesdits
+lesquelles
+lesquels
+leur
+leurs
+lorsque
+lui
+là
+ma
+made
+mais
+malgré
+mazette
+me
+merci
+merde
+mes
+mien
+mienne
+miennes
+miens
+milliard
+milliardième
+milliardièmes
+millionième
+millionièmes
+millième
+millièmes
+mince
+minute
+miséricorde
+moi
+moins
+mon
+morbleu
+motus
+moyennant
+mâtin
+na
+ne
+neuf
+neuvième
+neuvièmes
+ni
+nonante
+nonantième
+nonantièmes
+nonobstant
+nos
+notre
+nous
+nul
+nulle
+nulles
+nuls
+nôtre
+nôtres
+octante
+octantième
+oh
+ohé
+olé
+on
+ont
+onze
+onzième
+onzièmes
+or
+ou
+ouais
+ouf
+ouille
+oust
+ouste
+outre
+ouïe
+où
+paix
+palsambleu
+pan
+par
+parbleu
+parce
+pardi
+pardieu
+parmi
+pas
+passé
+patatras
+pechère
+pendant
+personne
+peu
+peuchère
+peut
+peuvent
+peux
+plein
+plouf
+plus
+plusieurs
+point
+pouah
+pour
+pourquoi
+pourra
+pourrai
+pourraient
+pourrais
+pourrait
+pourras
+pourrez
+pourriez
+pourrions
+pourrons
+pourront
+pourvu
+pouvaient
+pouvais
+pouvait
+pouvant
+pouvante
+pouvantes
+pouvants
+pouvez
+pouviez
+pouvions
+pouvoir
+pouvons
+premier
+premiers
+première
+premières
+psitt
+pst
+pu
+pue
+pues
+puis
+puisque
+puisse
+puissent
+puisses
+puissiez
+puissions
+purent
+pus
+pussent
+put
+pécaïre
+pût
+qq.
+qqch.
+qqn
+quand
+quant
+quarante
+quarantième
+quarantièmes
+quatorze
+quatorzième
+quatorzièmes
+quatre
+quatrième
+quatrièmes
+que
+quel
+quelle
+quelles
+quelqu'un
+quelqu'une
+quels
+qui
+quiconque
+quinze
+quinzième
+quinzièmes
+quoi
+quoique
+rataplan
+revoici
+revoilà
+rien
+sa
+sacristi
+salut
+sans
+saperlipopette
+sapristi
+sauf
+savoir
+se
+seize
+seizième
+seizièmes
+selon
+sept
+septante
+septantième
+septième
+septièmes
+sera
+serai
+seraient
+serais
+serait
+seras
+serez
+seriez
+serions
+serons
+seront
+ses
+si
+sien
+sienne
+siennes
+siens
+sinon
+six
+sixième
+sixièmes
+soi
+soient
+sois
+soit
+soixante
+soixantième
+soixantièmes
+sommes
+son
+sont
+sous
+soyez
+soyons
+stop
+suis
+suivant
+sur
+ta
+tandis
+tant
+taratata
+tayaut
+taïaut
+te
+tel
+telle
+telles
+tels
+tes
+tien
+tienne
+tiennes
+tiens
+toi
+ton
+touchant
+tous
+tout
+toute
+toutes
+treize
+treizième
+treizièmes
+trente
+trentième
+trentièmes
+trois
+troisième
+troisièmes
+tu
+tudieu
+turlututu
+un
+une
+unième
+unièmes
+v'lan
+va
+vers
+versus
+veuille
+veuillent
+veuilles
+veuillez
+veuillons
+veulent
+veut
+veux
+via
+vingt
+vingtième
+vingtièmes
+vivement
+vlan
+voici
+voilà
+vent
+vos
+votre
+voudra
+voudrai
+voudraient
+voudrais
+voudrait
+voudras
+voudrez
+voudriez
+voudrions
+voudrons
+voudront
+voulaient
+voulais
+voulait
+voulant
+voulante
+voulantes
+voulants
+voulez
+vouliez
+voulions
+vouloir
+voulons
+voulu
+voulue
+voulues
+voulurent
+voulus
+voulussent
+voulut
+voulût
+vous
+vs
+vu
+vôtre
+vôtres
+zut
+à
+ç'a
+ç'aura
+ç'aurait
+ç'avait
+ça
+çà
+ès
+étaient
+étais
+était
+étant
+étante
+étantes
+étants
+étiez
+étions
+évohé
+évoé
+êtes
+être
+ô
+ôté
+à l'égard d'
+à l'égard de
+à l'égard des
+à l'égard du
+à l'encontre d'
+à l'encontre de
+à l'encontre des
+à l'encontre du
+à l'instar d'
+à l'instar de
+à l'instar des
+à l'instar du
+à l'insu d'
+à l'insu de
+à l'insu des
+à l'insu du
+à l'issue d'
+à l'issue de
+à l'issue des
+à l'issue du
+à l'occasion d'
+à l'occasion de
+à l'occasion des
+à l'occasion du
+à la suite d'
+à la suite de
+à la suite des
+à la suite du
+à ladite
+à laquelle
+à même d'
+à même de
+à partir d'
+à partir de
+à partir des
+à partir du
+à travers
+abord
+afin d'
+afin de
+afin qu'
+afin que
+ainsi
+ainsi qu'
+ainsi que
+allaient
+allo
+allons
+alors qu'
+alors que
+aou
+août
+après qu'
+après que
+assez
+as-tu
+au cours d'
+au cours de
+au cours des
+au cours du
+au regard d'
+au regard de
+au regard des
+au regard du
+au sein d'
+au sein de
+au sein des
+au sein du
+au sujet d'
+au sujet de
+au sujet des
+au sujet du
+au travers d'
+au travers de
+au travers des
+au travers du
+au-delà d'
+au-delà de
+au-delà des
+au-delà du
+au-devant d'
+au-devant de
+au-devant des
+au-devant du
+aujourd
+aujourd'hui
+auprès
+auprès d'
+auprès de
+auprès des
+auprès du
+aussi
+aussi bien qu'
+aussi bien que
+autour d'
+autour de
+autour des
+autour du
+avant qu'
+avant que
+avr
+banco
+ben
+brrr
+c'est
+celle-ci
+celle-là
+celles-ci
+celles-là
+celui-ci
+celui-là
+cent
+certain
+certaine
+certainement
+certes
+ceux-ci
+ceux-là
+cf.
+cgr
+cher
+chère
+chères
+chers
+cinquantaine
+cinquante et un
+cinquante et une
+cinquante-cinq
+cinquante-deux
+cinquante-et-un
+cinquante-huit
+cinquante-neuf
+cinquante-quatre
+cinquante-sept
+cinquante-six
+cinquante-trois
+cm²
+combien
+compris
+d'après
+d'autres
+d'être
+d'un
+d'une
+d'entre
+de la part d'
+de la part de
+de la part des
+de la part du
+de ladite
+de laquelle
+de même qu'
+de même que
+de peur qu'
+de peur que
+dec
+dedans
+dehors
+delà
+déjà
+décembre
+dès lors qu'
+dès lors que
+dès qu'
+dès que
+désormais
+dessous
+dessus
+deuxièmement
+devers
+différent
+différente
+différentes
+différents
+dimanche
+dire
+divers
+diverse
+diverses
+dix-huit
+dix-neuf
+dix-sept
+dring
+effet
+elle-même
+elles-mêmes
+en cours d'
+en cours de
+en deçà
+en dépit d'
+en dépit de
+en dépit des
+en dépit du
+en faveur d'
+en faveur de
+en faveur des
+en faveur du
+en marge d'
+en marge de
+en marge des
+en marge du
+en matière d'
+en matière de
+en raison d'
+en raison de
+en raison des
+en raison du
+en vertu d'
+en vertu de
+en vertu du
+en vue d'
+en vue de
+en vue des
+en vue du
+en-dehors d'
+en-dehors de
+en-dehors des
+en-dehors du
+encore
+environ
+est
+et/ou
+etant
+etc
+été
+étée
+étées
+être
+eu égard à
+eu égard au
+eu égard aux
+eux-mêmes
+façon
+fais
+faisaient
+faisant
+fait
+faux
+feront
+fev
+février
+fevrier
+flac
+floc
+font
+gens
+ghz
+grâce à
+grâce au
+grâce aux
+han
+hm³
+houp
+hui
+importe
+jamais
+j'ai
+j'en
+j'eux
+jan
+janvier
+jeudi
+juil
+juillet
+juin
+jusqu
+jusqu'
+jusqu'a
+jusqu'au
+jusqu'aux
+juste
+km²
+l'autre
+l'on
+l'un
+l'une
+la leur
+la mienne
+la nôtre
+la sienne
+la tienne
+la vôtre
+le leur
+le mien
+le nôtre
+le sien
+le tien
+le vôtre
+les autres
+les leurs
+les miennes
+les miens
+les nôtres
+les siennes
+les siens
+les tiennes
+les tiens
+les vôtres
+lez
+longtemps
+lors d'
+lors de
+lors des
+lors du
+lors même qu'
+lors même que
+lorsqu'
+lui-même
+lundi
+m'a
+m'en
+mai
+maint
+mainte
+maintes
+maints
+mar
+mars
+mardi
+même
+mêmes
+mercredi
+mgr
+mhz
+mil
+mille
+milliards
+millions
+mm²
+mois
+moi-même
+n'a
+n'est
+néanmoins
+nombreuses
+nombreux
+non
+nous-mêmes
+nov
+novembre
+oct
+octobre
+ollé
+ore
+ouias
+paf
+par rapport à
+par rapport au
+par rapport aux
+par-delà
+parce qu'
+parce que
+parfois
+partant
+particulier
+particulière
+particulièrement
+pas grand-chose
+pff
+pfft
+pfut
+pif
+plus d'un
+plus d'une
+plutôt
+pour qu'
+pour que
+pourtant
+pourvu qu'
+pourvu que
+premièrement
+près
+proche
+puisqu'
+qu'
+qu'à
+quant à
+quant au
+quant aux
+quant-à-soi
+quanta
+quarante et un
+quarante et une
+quarante-cinq
+quarante-deux
+quarante-et-un
+quarante-huit
+quarante-neuf
+quarante-quatre
+quarante-sept
+quarante-six
+quarante-trois
+quatre-vingt
+quatre-vingt-cinq
+quatre-vingt-deux
+quatre-vingt-dix
+quatre-vingt-dix-huit
+quatre-vingt-dix-neuf
+quatre-vingt-dix-sept
+quatre-vingt-douze
+quatre-vingt-huit
+quatre-vingt-neuf
+quatre-vingt-onze
+quatre-vingt-quatorze
+quatre-vingt-quatre
+quatre-vingt-quinze
+quatre-vingt-seize
+quatre-vingt-sept
+quatre-vingt-six
+quatre-vingt-treize
+quatre-vingt-trois
+quatre-vingt-un
+quatre-vingt-une
+quatre-vingts
+quatrièmement
+qu'il
+qu'ils
+qu'elle
+qu'elles
+qu'on
+quelconque
+quelqu'
+quelque
+quelque chose
+quelques
+quelques-unes
+quelques-uns
+quoiqu'
+risque
+s'agit
+s'est
+s'ils
+s'il
+sacrebleu
+samedi
+semaine
+sep
+septembre
+soi-même
+soixante et onze
+soixante et un
+soixante-cinq
+soixante-deux
+soixante-dix
+soixante-dix-huit
+soixante-dix-neuf
+soixante-dix-sept
+soixante-douze
+soixante-et-onze
+soixante-et-un
+soixante-et-une
+soixante-huit
+soixante-neuf
+soixante-quatorze
+soixante-quatre
+soixante-quinze
+soixante-seize
+soixante-sept
+soixante-six
+soixante-treize
+soixante-trois
+souvent
+suite à
+surtout
+sus
+tac
+tacatac
+tandis qu'
+tandis que
+tellement
+tenant
+tic
+toc
+toi-même
+toujours
+toutefois
+trente et un
+trente et une
+trente-cinq
+trente-deux
+trente-et-un
+trente-huit
+trente-neuf
+trente-quatre
+trente-sept
+trente-six
+trente-trois
+très
+troisièmement
+trop
+tsoin
+tsouin
+venir
+viens
+vient
+venons
+venez
+viennent
+venu
+venus
+venue
+venues
+vienne
+viennes
+venions
+veniez
+faire
+faisons
+faites
+fasse
+fasses
+fassions
+fassiez
+fassent
+faite
+pareil
+plupart
+maintenant
+re
+nouveau
+dis
+dit
+disons
+disent
+dites
+dise
+dises
+disions
+disiez
+voir
+vois
+voit
+voyons
+voyez
+voient
+voie
+voies
+voyions
+voyiez
+vue
+prendre
+prends
+prend
+prenons
+prenez
+prennent
+prenne
+prennes
+prenions
+preniez
+pris
+prise
+haut
+manière
+unes
+uns
+usd
+vais
+vas
+vendredi
+vif
+vifs
+vingt et un
+vingt et une
+vingt-cinq
+vingt-deux
+vingt-huit
+vingt-neuf
+vingt-quatre
+vingt-sept
+vingt-six
+vingt-trois
+vis-à-vis
+vivat
+vive
+vives
+vrai
+vont
+vous-mêmes
+zéro
+zut
+xval
+xor
+yet
+*allws
+*inq
+*job
+*msgq
+*lib
+`arret
+arret
+wykqru
+{chemin
+{progid
+{instruction
+{emplacement
+{username}

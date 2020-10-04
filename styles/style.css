@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+
+
+#_tag {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+#nom {
+	
+  background: white; 
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#izlan{
+	
+	background: #000;
+	color: #CCCCFF;
+	font-weight: bold;
+	padding: 8px 10px;
+	border: 0;
+	border-radius: 4px;
+
+}
+
+
+
+table, tr, td {
+	
+	border:1px solid #ccc;
+	box-shadow:1px 1px 3px #999;
+}
+
+#tab_ {
+	background-color:#CCCCFF;
+}
+
+
+
+#menu{
+
+  background: #CCCCFF;
+  background-image: -webkit-linear-gradient(top, #CCCCFF, #2980b9);
+  background-image: -moz-linear-gradient(top, #CCCCFF, #2980b9);
+  background-image: -ms-linear-gradient(top, #CCCCFF, #2980b9);
+  background-image: -o-linear-gradient(top, #CCCCFF, #2980b9);
+  background-image: linear-gradient(to bottom, #CCCCFF, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #336600;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+
+#distance{
+	color: blue;
+}
+
+.SI-FILES-STYLIZED label.cabinet
+	{
+		width: 79px;
+		height: 22px;
+		background: url(btn-choose-file.gif) 0 0 no-repeat;
+
+		display: block;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.SI-FILES-STYLIZED label.cabinet input.file
+	{
+		position: relative;
+		height: 100%;
+		width: auto;
+		opacity: 0;
+		-moz-opacity: 0;
+		filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	}
