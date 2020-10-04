@@ -1,7 +1,6 @@
 # Moteur de recherche avec PHP
 
-### Mettre en œuvre des techniques utilisées pour l'indexation automatique orientée Hypermédia (textuelle, ...), 
-### ainsi que l'usage de SGBD dans un contexte de stockage et de consultation.
+### Mettre en œuvre des techniques utilisées pour l'indexation automatique orientée Hypermédia (textuelle, ...),ainsi que l'usage de SGBD dans un contexte de stockage et de consultation.
 
   * Indexation de documents html
   * Extraction des mots clés
